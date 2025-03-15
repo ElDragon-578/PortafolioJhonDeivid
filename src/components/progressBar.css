@@ -1,0 +1,17 @@
+.progress{
+    height: 20px;
+    width: 500px;
+    background-color: #E57A72;
+    border: 1px solid #332b2b20;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    overflow: hidden;
+}
+
+.progress div{
+    height: 100%;
+    width: 20%;
+    background-color: #713C38;
+}
