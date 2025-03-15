@@ -1,0 +1,6 @@
+.header{
+    background-image:  linear-gradient(0deg, rgba(123,8,0,0.27494747899159666) 0%, rgba(226, 190, 190, 0.374) 100%), url(../../../public/header-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
