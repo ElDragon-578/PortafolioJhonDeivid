@@ -1,53 +1,26 @@
-import { useState, useEffect, useRef } from "react"
-import { ProgressBar } from "../../components/progressBar"
+import { SkillsProgressBar } from "../../components/SkillsPrgressBar"
 
 export function Skills(){
-    const [value, setValue] = useState(0)
-    const [visible, setVisible] = useState(false)
-    const ref = useRef(null)
-
-    
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.01 }
-        );
-
-        if (ref.current) observer.observe(ref.current);
-
-        return () => observer.disconnect();
-    }, []);
-    
-    useEffect(() =>{
-        if (!visible) return
-
-        const interval = setInterval(() =>{
-            setValue((val)=>(val < 100  ? val + 5 :100))
-        },100)
-
-        return () => clearInterval(interval)
-    },[visible])
-
     return(
         <>
-            <section className="w-[100%] h-[55vw] flex place-items-center justify-center">
-                <article className="w-[87%] h-[95%] m-[30px] border divide-[#332B2B] shadow-xl rounded-2xl flex flex-col place-items-center p-[25px]">
+            <section className="w-full max-w-[100%] mx-auto h-full min-h-[55vw] flex place-items-center justify-center">
+                <article className="w-[87%] h-auto m-[30px] border divide-[#332B2B] shadow-xl rounded-2xl flex flex-col place-items-center p-[25px]">
                     <h1 className="text-[2.5rem]">Habilidades</h1>
-                    <div ref ={ref}>
-                        {
-                            visible ? (
-                            <>
-                            <ProgressBar img={"../../public/header-img.jpg"} value={value} total={75}/>
-                            <ProgressBar img={"../../public/header-img.jpg"} value={value} total={80}/>
-                            </>
-
-                            ) : (<div className="h-40 w-full">Cargando...</div>)
-                        }
+                    <div className="w-[90%]">
+                        <SkillsProgressBar img={"../../public/logosSkills/javascript.svg"} total={90} />
+                        <SkillsProgressBar img={"../../public/logosSkills/nodejs.svg"} total={70} />
+                        <SkillsProgressBar img={"../../public/logosSkills/React_light.svg"} total={70} />
+                        <SkillsProgressBar img={"../../public/logosSkills/Express.js_light.svg"} total={60} />
+                        <SkillsProgressBar img={"../../public/logosSkills/Prisma_light.svg"} total={75} />
+                        <SkillsProgressBar img={"../../public/logosSkills/tailwindcss.svg"} total={75} />
+                        <SkillsProgressBar img={"../../public/logosSkills/figma.svg"} total={55} />
+                        <SkillsProgressBar img={"../../public/logosSkills/html5.svg"} total={95} />
+                        <SkillsProgressBar img={"../../public/logosSkills/css_old.svg"} total={90} />
+                        <SkillsProgressBar img={"../../public/logosSkills/python.svg"} total={65} />
+                        <SkillsProgressBar img={"../../public/logosSkills/mysql.svg"} total={85} />
+                        <SkillsProgressBar img={"../../public/logosSkills/git.svg"} total={70} />
+                        <SkillsProgressBar img={"../../public/logosSkills/java.svg"} total={25} />
+                        <SkillsProgressBar img={"../../public/logosSkills/csharp.svg"} total={20} />
                     </div>
                     
                 </article>

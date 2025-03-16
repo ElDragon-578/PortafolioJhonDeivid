@@ -1,6 +1,7 @@
-import { Header } from "./components/header"
-import { AboutMe } from "./components/aboutMe"
+import { Header } from "./components/Header.jsx"
+import { AboutMe } from "./components/AboutMe.jsx"
 import { Skills } from "./components/Skills"
+import { Portfolio } from "./components/Portfolio.jsx"
 
 export function Index(){
     return(
@@ -8,6 +9,7 @@ export function Index(){
             <Header/>
             <AboutMe/>
             <Skills/>
+            <Portfolio/>
         </>
     )
 }
