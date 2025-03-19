@@ -1,5 +1,5 @@
 import { Routes, Route} from 'react-router-dom'
-import {Index} from './index/index.jsx'
+import {Index} from './index/Index.jsx'
 
 export function Router() {
     return(
