@@ -46,7 +46,6 @@ export function TiltCard({classContainer, divisor, title, content}) {
                     className={`absolute inset-3 grid place-content-center rounded-xl shadow-2xl`}
                 >
                     <h1 className="absolute bottom-10 left-3 text-[25px]">{title}</h1>
-                    <p className="absolute bottom-3 left-3 text-[10px]">{content}</p>
 
                 </div>
             </motion.div>
