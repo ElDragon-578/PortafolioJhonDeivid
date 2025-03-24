@@ -3,7 +3,7 @@ import { AboutMe } from "./components/AboutMe.jsx"
 import { Skills } from "./components/Skills"
 import { Portfolio } from "./components/Portfolio.jsx"
 import { Footer } from "../components/Footer.jsx"
-import { Particules } from "../components/Particules.jsx"
+import { Contact } from "./components/contact.jsx"
 
 export function Index(){
     return(
@@ -11,7 +11,8 @@ export function Index(){
             <Header/>
             <AboutMe/>
             <Portfolio/>
-            <Skills/>
+            {/* <Skills/> */}
+            <Contact/>
 
             <Footer />
 

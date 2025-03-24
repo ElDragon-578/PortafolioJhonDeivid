@@ -1,4 +1,4 @@
-import { useRef, useEffect,useState } from "react";
+import { useRef, useEffect} from "react";
 
 export const Particules = ({content}) => {
     const canvasRef = useRef(null)
@@ -29,33 +29,25 @@ export const Particules = ({content}) => {
                 this.size = size
             }
             update(){
-                if (mousePosition.x === null || mousePosition.y === null) {
-                    this.x += (this.initialX - this.x) * 0.05;
-                    this.y += (this.initialY - this.y) * 0.05;
-                    return;
-                }
-
                 const dx = this.x - mousePosition.x
                 const dy = this.y - mousePosition.y
                 const distance = Math.sqrt(dx*dx + dy*dy)
 
-                if(distance< 65){
+                if(distance < 70){
                     const pushX = (dx/distance) * 1.5
                     const pushY = (dy/distance) * 1.5
 
                     this.x += pushX
                     this.y += pushY
                     this.opacity = 1
-                }else if(distance > 65 && distance < 75){
-
-                } else{
+                }else if(distance > 75){
                     this.x += (this.initialX - this.x )*0.05
                     this.y += (this.initialY - this.y )*0.05
                     this.opacity = Math.max(0.25, this.opacity *= 0.98)
                 }
             }
             draw(){
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
                 ctx.closePath();
@@ -71,7 +63,6 @@ export const Particules = ({content}) => {
                 let y = Math.random() * canvas.height
                 particulesInScreen.push(new Particle(x, y, size))
             }
-            console.log(particulesInScreen)
         }
 
         function connectParticules(){
@@ -82,12 +73,13 @@ export const Particules = ({content}) => {
 
                     let distance = Math.sqrt(dx**2 + dy**2)
                     if(distance<100){
-                        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)"
+                        ctx.strokeStyle = "rgba(0, 0, 0, 0.3)"
                         ctx.lineWidth = 1
                         ctx.beginPath()
                         ctx.moveTo(particulesInScreen[i].x, particulesInScreen[i].y)
                         ctx.lineTo(particulesInScreen[j].x, particulesInScreen[j].y)
                         ctx.stroke()
+                        ctx.closePath()
                     }
 
                  }
@@ -98,7 +90,7 @@ export const Particules = ({content}) => {
         function drawMouseCircle() {
             ctx.beginPath();
             ctx.arc(mousePosition.x, mousePosition.y, mouseRadius, 0, Math.PI * 2);
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.2)";
             ctx.lineWidth = 2;
             ctx.stroke();
             ctx.closePath();
@@ -150,10 +142,10 @@ export const Particules = ({content}) => {
     return(
         <>
             <div className="relative w-full h-screen" >
-                <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full bg-black"></canvas>
+                <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full bg-white"></canvas>
                 
                 <div className="relative z-10 flex flex-col place-items-center justify-center items-center h-full text-center" style={{ 
-                    backgroundImage: "linear-gradient(0deg, rgb(255, 255, 255) 8%, rgba(123, 8, 0, 0.27) 85%)"
+                    backgroundImage: "linear-gradient(0deg, rgb(255, 255, 255) 8%, rgba(123, 8, 0, 0.30) 100%)"
                 }}>
                     {content}
                 </div>

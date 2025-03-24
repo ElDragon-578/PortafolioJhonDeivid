@@ -1,9 +1,30 @@
 import { motion } from "framer-motion";
-import { useState} from "react";
+import { useRef, useState, useEffect} from "react";
+// import { Bubles } from "./Bubles";
 
-export function TiltCard({classContainer, divisor, title, content}) {
+export function TiltCard({classContainer, divisor, title, content, itemGradient, img}) {
     const [rotate, setRotate] = useState({ x: 0, y: 0 });
+    const [size, setSize] = useState({width: 100, height: 100})
+    const divRef = useRef(null)
+    const isMouseInside = useRef(false)
 
+    useEffect(() => {
+        if (!divRef.current) return;
+
+        const { width, height } = divRef.current.getBoundingClientRect();
+        setSize({ width, height });
+
+        const resizeObserver = new ResizeObserver(([entry]) => {
+            if (entry) {
+                const { width, height } = entry.contentRect;
+                setSize({ width, height });
+            }
+        });
+
+        resizeObserver.observe(divRef.current);
+
+        return () => resizeObserver.disconnect();
+    }, []);
 
     const handleMouse = (e) => {
         const { clientX, clientY, currentTarget } = e;
@@ -15,17 +36,26 @@ export function TiltCard({classContainer, divisor, title, content}) {
         const y = (clientY - top - height / 2)/divisor;
 
         setRotate({ x, y });
+
+        isMouseInside.current = true
+        
     };
 
     const handleExitMouse = () => {
         setRotate({ x: 0, y: 0 });
+        isMouseInside.current = false
     };
-
     return (
         <>
             <motion.div
+                ref={divRef}
                 className={`${classContainer}`}
-                style={{ transformStyle: "preserve-3d"}}
+                style={{ 
+                    transformStyle: "preserve-3d",
+                    backgroundImage: `linear-gradient(${itemGradient}), url(${img})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                }}
                 onMouseMove={handleMouse}
                 onMouseLeave={handleExitMouse}
                 animate={{
@@ -40,13 +70,12 @@ export function TiltCard({classContainer, divisor, title, content}) {
             >
                 <div
                     style={{
-                    transform: "translateZ(75px)",
-                    transformStyle: "preserve-3d",
+                        transform: "translateZ(75px)",
+                        transformStyle: "preserve-3d",
                     }}
-                    className={`absolute inset-3 grid place-content-center rounded-xl shadow-2xl`}
+                    className={`absolute inset-3 flex flex-col place-items-end justify-end rounded-xl shadow-2xl p-2`}
                 >
-                    <h1 className="absolute bottom-10 left-3 text-[25px]">{title}</h1>
-
+                    <h1 className="flex flex-col text-[1.3rem]">{title}</h1>
                 </div>
             </motion.div>
         </>
