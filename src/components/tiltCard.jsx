@@ -68,6 +68,7 @@ export function TiltCard({classContainer, divisor, title, content, itemGradient,
                     duration: 0.3
                 }}
             >
+                
                 <div
                     style={{
                         transform: "translateZ(75px)",

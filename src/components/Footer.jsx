@@ -13,10 +13,10 @@ export function Footer() {
                     </a>
                 </div>
                 <div className="w-full h-auto p-2 flex  place-items-center justify-evenly text-white  mb-5">
-                    <a href="#">Inicio</a>
-                    <a href="#">Acerca de mi</a>
-                    <a href="#">Portafolio</a>
-                    <a href="#">Skills</a>
+                    <a href="#header">Inicio</a>
+                    <a href="#aboutme">Acerca de mi</a>
+                    <a href="#portfolio">Portafolio</a>
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div className="w-full h-auto p-2 flex flex-col text-white text-center mb-5">
                     <p>&copy; Todos los derechos reservados Jhon Deivid Nuñez</p>

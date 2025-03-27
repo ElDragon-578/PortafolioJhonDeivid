@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react"
 import { ProgressBar } from "./progressBar"
 
+//Asi se llama este componente
+{/* <SkillsProgressBar img={"../../public/logosSkills/javascript.svg"} total={90} /> */}
+
 export function SkillsProgressBar({img, total}){
     const [value, setValue] = useState(0)
     const [visible, setVisible] = useState(false)

@@ -10,7 +10,7 @@ export function Portfolio() {
 
     return (
         <>
-            <h1 className="text-center text-[2.5rem] text-[#332B2B]">Portafolio</h1>
+            <h1 className="text-center text-[2.5rem] text-[#332B2B]" id="portfolio">Portafolio</h1>
             <div className="w-[25%] h-[3px] bg-[#332B2B] my-2 mx-auto"></div>
             <section className="w-full max-w-[87%] mx-auto m-2 h-full min-h-[300vw] lg:min-h-[44vw] grid grid-cols-2 grid-rows-20 lg:grid-cols-5 lg:grid-rows-4 gap-4 place-items-center justify-items-center perspective-1000">
                 <TiltCard 

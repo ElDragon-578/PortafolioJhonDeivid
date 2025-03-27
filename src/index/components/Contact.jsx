@@ -28,12 +28,13 @@ export function Contact (){
 
     return(
         <>
-            <h1 className="text-center text-[2.5rem] text-[#332B2B] mt-5">Contactame</h1>
+            <h1 className="text-center text-[2.5rem] text-[#332B2B] mt-5" id="contact">Contactame</h1>
             <div className="w-[25%] h-[3px] bg-[#332B2B] my-2 mx-auto"></div>
-            <form onSubmit={handleSubmit} className="max-w-[95%] w-full h-auto min-h-[400px] m-6 p-6 flex flex-col gap-4 border rounded-2xl shadow-xl">
+            <form onSubmit={handleSubmit} className="max-w-[87%] w-full h-auto min-h-[400px] mx-auto m-6 p-6 flex flex-col gap-4 border rounded-2xl shadow-xl" >
                 <label htmlFor="name">Nombre</label>
                 <input 
-                    className="w-[40%] h-[2rem] border border-[#332B2B] rounded-lg p-2" 
+                    id="name"
+                    className="w-[50%] h-[2rem] border border-[#332B2B] rounded-lg p-2" 
                     type="text" 
                     placeholder="Escribe tu nombre..."
                     name="name"
@@ -44,7 +45,8 @@ export function Contact (){
 
                 <label htmlFor="mail">Email</label>
                 <input 
-                    className="w-[40%] h-[2rem] border border-[#332B2B] rounded-lg p-2" 
+                    id="mail"
+                    className="w-[50%] h-[2rem] border border-[#332B2B] rounded-lg p-2" 
                     type="email" 
                     placeholder="Escribe tu correo..."
                     name="mail"
@@ -55,6 +57,7 @@ export function Contact (){
 
                 <label htmlFor="text">Descripcion</label>
                 <textarea 
+                    id="text"
                     className="w-[50%] h-[7rem] border border-[#332B2B] rounded-lg p-2 resize-none" 
                     type="text" 
                     placeholder="Escribe un breve resumen del proyecto que quieres hacer..."
@@ -65,7 +68,7 @@ export function Contact (){
                 />
 
                 {status && <p className="text-center bg-gray-700 text-white rounded-xl">{status}</p>}
-                <button type="submit" className="w-[50%] h-[3rem] p-2 bg-[#7B0800] text-white rounded-xl duration-300 ease-in-out hover:bg-[#9B3A34] hover:scale-[105%]">Enviar</button>
+                <button type="submit" className="w-[50%] h-[3rem] p-2 bg-[#7B0800] text-white rounded-xl duration-300 ease-in-out hover:bg-[#9B3A34] hover:scale-[103%]">Enviar</button>
             </form>
 
 
