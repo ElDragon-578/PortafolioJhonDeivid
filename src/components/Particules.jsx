@@ -145,7 +145,7 @@ export const Particules = ({content}) => {
                 <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full bg-white"></canvas>
                 
                 <div className="relative z-10 flex flex-col place-items-center justify-center items-center h-full text-center" style={{ 
-                    backgroundImage: "linear-gradient(0deg, rgb(255, 255, 255) 10%, rgba(123, 8, 0, 0.7) 100%)"
+                    backgroundImage: "linear-gradient(0deg, rgb(255, 255, 255) 8%, rgba(123, 8, 0, 0.7) 90%)"
                 }}>
                     {content}
                 </div>

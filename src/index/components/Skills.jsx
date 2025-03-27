@@ -42,7 +42,7 @@ export function Skills() {
                     className="w-full"
                 >
                     {items.map((item) => (
-                        <SwiperSlide key={item.id} className="flex">
+                        <SwiperSlide key={item.id} className="flex mx-2">
                             <Labels 
                                 img={item.img} 
                                 title={item.title} 

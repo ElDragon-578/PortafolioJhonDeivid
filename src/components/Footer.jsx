@@ -1,3 +1,5 @@
+import { Link } from "react-scroll"
+
 export function Footer() {
 
     return(
@@ -13,10 +15,10 @@ export function Footer() {
                     </a>
                 </div>
                 <div className="w-full h-auto p-2 flex  place-items-center justify-evenly text-white  mb-5">
-                    <a href="#header">Inicio</a>
-                    <a href="#aboutme">Acerca de mi</a>
-                    <a href="#portfolio">Portafolio</a>
-                    <a href="#contact">Contacto</a>
+                    <Link to="header" smooth={true} duration={500} className="cursor-pointer">Inicio</Link>
+                    <Link to="aboutme" smooth={true} duration={500} className="cursor-pointer">Acerca de mi</Link>
+                    <Link to="portfolio" smooth={true} duration={500} className="cursor-pointer">Portafolio</Link>
+                    <Link to="contact" smooth={true} duration={500} className="cursor-pointer">Contacto</Link>
                 </div>
                 <div className="w-full h-auto p-2 flex flex-col text-white text-center mb-5">
                     <p>&copy; Todos los derechos reservados Jhon Deivid Nuñez</p>
