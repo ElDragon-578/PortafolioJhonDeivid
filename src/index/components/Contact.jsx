@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import axios from "axios"
 
 export function Contact (){
@@ -8,9 +9,13 @@ export function Contact (){
         text: "",
     })
     const [status, setStatus] = useState(null)
+    const [statusBackground, setStatusBackground] = useState("bg-gray-500")
     const [copy, setCopy] = useState(false)
     const [displaytext, setDisplayText] = useState("")
     const [visible, setVisible] = useState(false)
+    const [validCaptcha, setValidCaptcha] = useState(null)
+    const [validUser, setValidUser] = useState(false)
+    const captchaRef = useRef(null)
     const ref = useRef(null)
     const email ="Jhondeividnunez@gmail.com"
 
@@ -45,18 +50,37 @@ export function Contact (){
 
     const handleChange= (e) =>{
         setFormData({...formData, [e.target.name]: e.target.value})
+        if(captchaRef.current.getValue()){
+            setValidCaptcha(true)
+        }
     }
 
     const handleSubmit= async (e) =>{
         e.preventDefault()
-        setStatus("Enviado...")
 
-        try{
-            await axios.post("http://localhost:3000/mailSend", formData)
-            setStatus("Mensaje enviado con exito")
-            setFormData({name: "", mail: "", text: ""})
-        }catch(err){
-            setStatus(`Error al enviar el mensaje ${err}`)
+        if(captchaRef.current.getValue()){
+            setStatus("Enviado...")
+            setStatusBackground("bg-gray-500")
+
+            setValidUser(true)
+            setValidCaptcha(true)
+    
+            try{
+                await axios.post("http://localhost:3000/mailSend", formData)
+                setStatus("Mensaje enviado con exito")
+                setStatusBackground("bg-green-500")
+                setFormData({name: "", mail: "", text: ""})
+            }catch(err){
+                setStatus(`Error al enviar el mensaje ${err}`)
+                setStatusBackground("bg-red-500")
+            }
+
+        }else{
+            setStatus("Captcha no valido")
+            setStatusBackground("bg-red-500")
+
+            setValidUser(false)
+            setValidCaptcha(false)
         }
     }
 
@@ -108,7 +132,13 @@ export function Contact (){
                         required
                     />
 
-                    {status && <p className="text-center bg-gray-700 text-white rounded-xl">{status}</p>}
+                    <ReCAPTCHA
+                        ref={captchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                        onChange={handleChange}
+                    />
+
+                    {status && <p className={`text-center ${statusBackground} text-white rounded-xl`}>{status}</p>}
                     <button type="submit" className="w-full h-12 p-2 bg-[#7B0800] text-white rounded-xl duration-300 ease-in-out hover:bg-[#9B3A34] hover:scale-[103%]">Enviar</button>
                 </div>
                 <div ref={ref} className="w-full h-auto flex flex-col justify-center items-center gap-y-4 p-6">
