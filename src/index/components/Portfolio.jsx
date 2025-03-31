@@ -49,7 +49,7 @@ export function Portfolio() {
                     classContainer={"w-full h-full col-span-2 row-span-4 rows-start-17 lg:col-span-3 lg:row-span-2 lg:col-start-3 lg:row-start-3 rounded-xl relative text-left container2 text-white"} 
                     divisor={11} 
                     content={"Probando"} 
-                    title={"Busqueda indexada"}
+                    title={"Búsqueda indexada"}
                     itemGradient={gradient.Medium}
                     img={"../../../public/header-img.jpg"}
                 />

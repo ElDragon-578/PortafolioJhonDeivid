@@ -3,7 +3,7 @@ export function AboutMe(){
         <>
             <section className="w-full max-w-[90%] mx-auto h-full min-h-[20vh] grid gap-4 grid-cols-1 lg:grid-cols-[65%_minmax(35%,_1fr)] place-items-center justify-items-center mb-5" id="aboutme">
                 <div className="max-w-[95%] w-full h-auto min-h-[400px] m-6 p-6 border rounded-2xl shadow-xl">
-                    <h1 className="ml-2 text-[2.5rem] text-[#332B2B]"> Acerca de mi</h1>
+                    <h1 className="ml-2 text-[2.5rem] text-[#332B2B]"> Acerca de mí</h1>
                     <div className="w-[55%] h-[3px] bg-[#332B2B] my-2"></div>
                     <p className="text-[1.25rem] text-[#332B2B] p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem natus deserunt officia unde voluptatum laboriosam dolor explicabo ea quisquam, ratione enim similique fugit magnam eius, non facere placeat quam nesciunt? lor</p>
                 </div>

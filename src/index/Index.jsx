@@ -22,7 +22,6 @@ export function Index(){
             {
                 components.map((item)=>{
                     return <AnimateComponent key={item.id} content={item.content}/>
-
                 })
             }
             <Footer />

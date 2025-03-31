@@ -5,7 +5,7 @@ export function Footer() {
     return(
         <>
             <footer className="w-full h-full min-h-[250px] bg-[#332B2B] flex flex-col place-items-center justify-center mt-5 pt-4">
-                <h1 className="w-full h-auto text-white text-center bg-[#332B2B] p-2 text-[25px] mb-5">Que esperas para hacer tu proyecto realidad!</h1>
+                <h1 className="w-full h-auto text-white text-center bg-[#332B2B] p-2 text-[25px] mb-5">Qué esperas para hacer tu proyecto realidad!</h1>
                 <div className="w-full h-auto p-2 flex gap-4 justify-center items-center mb-5">
                     <a href="https://github.com/ElDragon-578" target="_blank" rel="noopener noreferrer">
                         <img src="../../public/logosSkills/github-dark.svg" alt="logoGit" className="w-6 h-6"/>
@@ -16,7 +16,7 @@ export function Footer() {
                 </div>
                 <div className="w-full h-auto p-2 flex  place-items-center justify-evenly text-white  mb-5">
                     <Link to="header" smooth={true} duration={500} className="cursor-pointer">Inicio</Link>
-                    <Link to="aboutme" smooth={true} duration={500} className="cursor-pointer">Acerca de mi</Link>
+                    <Link to="aboutme" smooth={true} duration={500} className="cursor-pointer">Acerca de mí</Link>
                     <Link to="portfolio" smooth={true} duration={500} className="cursor-pointer">Portafolio</Link>
                     <Link to="contact" smooth={true} duration={500} className="cursor-pointer">Contacto</Link>
                 </div>

@@ -12,7 +12,7 @@ export function AnimateComponent ({content}) {
                     setVisible(entry.isIntersecting)
                 }
             },
-            {threshold: 0.3}
+            {threshold: 0.01}
         )
 
         if(ref.current){

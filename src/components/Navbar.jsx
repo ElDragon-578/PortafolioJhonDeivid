@@ -67,7 +67,7 @@ export function Navbar({position}) {
             <nav ref={navRef} className={`w-full max-w-[100%] ${position} top-0 left-0 z-30 py-2 transition-all duration-300 ease-in-out  ${scrolled ? " shadow-xl backdrop-blur-lg [&>ul>li>a]:text-[#332B2B]": "bg-transparent text-white"}`}>
                 <ul className="w-full flex justify-center text-sm [&>li>a]:inline-block [&>li>a]:p-4 [&>li>a]:py-2  lg:gap-8 z-20" id="headerA">
                     <li><Link to="header" smooth={true} duration={500} className="cursor-pointer">Inicio</Link></li>
-                    <li><Link to="aboutme" smooth={true} duration={500} className="cursor-pointer">Acerca de Mi</Link></li>
+                    <li><Link to="aboutme" smooth={true} duration={500} className="cursor-pointer">Acerca de Mí</Link></li>
                     <li><Link to="portfolio" smooth={true} duration={500} className="cursor-pointer">Portafolio</Link></li>
                     <li><Link to="contact" smooth={true} duration={500} className="cursor-pointer">Contacto</Link></li>
                 </ul>

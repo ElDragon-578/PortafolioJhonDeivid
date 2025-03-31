@@ -17,7 +17,7 @@ export const Particules = ({content}) => {
 
         let particulesInScreen = []
         const numberParticules = 100
-        const mouseRadius = 65;
+        // const mouseRadius = 65;
 
         class Particle  {
             constructor(x, y, size){
@@ -87,14 +87,14 @@ export const Particules = ({content}) => {
 
         }
 
-        function drawMouseCircle() {
-            ctx.beginPath();
-            ctx.arc(mousePosition.x, mousePosition.y, mouseRadius, 0, Math.PI * 2);
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.2)";
-            ctx.lineWidth = 2;
-            ctx.stroke();
-            ctx.closePath();
-        }
+        // function drawMouseCircle() {
+        //     ctx.beginPath();
+        //     ctx.arc(mousePosition.x, mousePosition.y, mouseRadius, 0, Math.PI * 2);
+        //     ctx.strokeStyle = "rgba(0, 0, 0, 0.2)";
+        //     ctx.lineWidth = 2;
+        //     ctx.stroke();
+        //     ctx.closePath();
+        // }
 
         function animate(){
             ctx.clearRect(0,0, canvas.width, canvas.height)

@@ -92,7 +92,7 @@ export function Contact (){
 
     return(
         <>
-            <h1 className="text-center text-[2.5rem] text-[#332B2B] mt-5" id="contact">Contactame</h1>
+            <h1 className="text-center text-[2.5rem] text-[#332B2B] mt-5" id="contact">Contáctame</h1>
             <div className="w-[25%] h-[3px] bg-[#332B2B] my-2 mx-auto"></div>
             <form onSubmit={handleSubmit} className="max-w-[87%] w-full h-auto min-h-[400px] mx-auto m-6 p-6 lg:flex  gap-4 border rounded-2xl shadow-xl" >
                 <div className="w-full h-auto flex flex-col gap-y-4 p-6">
@@ -120,7 +120,7 @@ export function Contact (){
                         required
                     />
 
-                    <label htmlFor="text">Descripcion</label>
+                    <label htmlFor="text">Descripción</label>
                     <textarea 
                         id="text"
                         className="w-full h-28 border border-[#332B2B] rounded-lg p-2 resize-none" 
